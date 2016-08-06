@@ -45,7 +45,7 @@ class User implements SplSubject{
 	// 注册观测者
 	public $_observers = array();
 
-	public $email = '631536516';
+	public $email = '';
 
 	//动作类型
 	CONST OBSERVER_TYPR_REGISTER = 1 ; // 注册
@@ -84,7 +84,9 @@ class User implements SplSubject{
     	}
     }
 
-    public function addUser(){
+    public function addUser($email){
+
+    	$this->email = $email;
 
     	// 添加用户sql操作 
     	$this->notify(self::OBSERVER_TYPR_REGISTER);
@@ -101,6 +103,12 @@ class User implements SplSubject{
  * 观察者--发送邮件
  */
 class Send_Mail implements SplObserver{
+
+	//private $_email = '';
+
+	public function __construct(){
+
+	}
 
 	/**
 	 * 相应被观察者的变更信息
@@ -126,15 +134,17 @@ class Send_Mail implements SplObserver{
 	 */
 	public function sendMail($email , $title , $content){
 
-		echo 'Message:'.$email.'--'.$title.'--'.$content;
+		echo 'Message:'.$email.'--'.$title.'--'.$content.'<br/>';
 	}
 }
 
 
 $user = new User();
 $user->attach(new Send_Mail() , 1);
+$user->attach(new Send_Mail() , 1);
 
-$user->addUser();
+$user->addUser('631536516');
+//$user->addUser('214688869');
 
 
 // function test(Array $arr = array()){

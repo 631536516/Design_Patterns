@@ -29,7 +29,18 @@
 
 ###Observer(观察者模式)
 
+###Strategy(策略模式)
 
-http://mp.weixin.qq.com/s?__biz=MzAwNjMxMTA5Mw==&mid=2651340216&idx=1&sn=4eba1cc187da43b6d85096ad84deca7a&scene=1&srcid=08040RQtqARcJi0MPQ9mIMwY#rd
+###CommandChain(命令链模式)
+
+###ObjectPool(对象池模式)
+
+###Prototype(原型模式)
+
+###Proxy(代理模式)
+
+http://www.admin10000.com/document/7115.html
+
+http://blog.csdn.net/jhq0113/article/category/3062707
 
 
